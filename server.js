@@ -13,7 +13,7 @@ const PORT = 5000;
 
 app.use(
   cors({
-    origin: ["https://nz-blog-client.vercel.app/"],
+    origin: ["https://nz-blog-client.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
   })
