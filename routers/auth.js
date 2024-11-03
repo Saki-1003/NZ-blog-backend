@@ -38,13 +38,12 @@ router.post("/login", async (req, res) => {
   }
 
   if (mathingUser.email === process.env.ADMIN_EMAIL) {
-    console.log("admin setting getting called");
+    console.log();
     const token = jwt.sign({ id: mathingUser.id }, process.env.SECRET_KEY, {
       expiresIn: "1d",
     });
     return res.status(201).json({ isAdmin: true, token });
   }
-  console.log("admin setting being skipped");
   const token = jwt.sign({ id: mathingUser.id }, process.env.SECRET_KEY, {
     expiresIn: "1d",
   });
