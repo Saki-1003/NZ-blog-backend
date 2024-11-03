@@ -11,7 +11,13 @@ require("dotenv").config();
 
 const PORT = 5000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://nz-blog-client.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/post", postRoute);
